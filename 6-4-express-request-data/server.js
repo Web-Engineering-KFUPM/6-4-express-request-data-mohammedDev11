@@ -25,17 +25,17 @@ LAB SETUP INSTRUCTIONS
   If your system blocks running npm commands (especially on Windows PowerShell),
    run this command first to allow script execution:
       Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-  
+
  * ============================================
  * TODO-1 (Server Setup):
  * ============================================
  *   - create Express app instance
  *   - start server on port 3000
  *   - show console.log("API running at http://localhost:3000")
- *   HINT: 
+ *   HINT:
  *     const app = express();
  *     app.listen(3000, ()=> console.log(...));
- * 
+ *
  *============================================
  * TODO-2 (/echo route):
  * ============================================
@@ -80,10 +80,10 @@ LAB SETUP INSTRUCTIONS
  *============================================
  *
  * # After running server:
- * 
+ *
  * curl "http://localhost:3000"
  *   → just see server up
- * 
+ *
  * curl "http://localhost:3000/echo?name=Ali&age=22"
  *   → 200 { ok:true, name:"Ali", age:"22", msg:"Hello Ali, you are 22" }
  *
@@ -105,24 +105,19 @@ LAB SETUP INSTRUCTIONS
  */
 
 //import express
-
-
+import express from "express";
 // create express app instance to create web server
-
-
+const app = express();
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 
 // Query params: /echo?name=Ali&age=22
 
-
 // Route params: /profile/First/Last
-
 
 // Route param middleware example: /users/42
 
-
 // Route params: /users/:userId route
 
-
 // Start the server by listening
-
-
